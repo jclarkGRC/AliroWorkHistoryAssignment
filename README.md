@@ -2396,6 +2396,16 @@ If this still doesn’t help, try running `launchctl unload -F ~/Library/LaunchA
 
 There are also reports that *uninstalling* Watchman fixes the issue. So if nothing else helps, remove it from your system and try again.
 
+### `npm test` fails on macOS Mojave
+
+If you run 'npm test' and it just fails to run then it may be again be an issue with watchman.
+
+It is recommended to reinstall watchman:
+
+...
+brew install watchman
+...
+
 ### `npm run build` exits too early
 
 It is reported that `npm run build` can fail on machines with limited memory and no swap space, which is common in cloud environments. Even with small projects this command can increase RAM usage in your system by hundreds of megabytes, so if you have less than 1 GB of available memory your build is likely to fail with the following message:
