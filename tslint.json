@@ -3,7 +3,8 @@
   "rules": {
     "object-literal-sort-keys": false, // Disable for typescript
     "member-access": false, // enable if wanted
-    "jsx-boolean-value": false
+    "jsx-boolean-value": false,
+    "ordered-imports": false
   },
   "linterOptions": {
     "exclude": [
