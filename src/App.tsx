@@ -1,30 +1,28 @@
-import * as React from "react";
-import { Component } from "react";
-import { HashRouter } from 'react-router-dom';
-import routes from './routes';
-import { createStore } from 'redux';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import { blue } from '@material-ui/core/colors';
+import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import './App.css';
 import rootReducer from './reducers/index';
-import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-import {blue} from "@material-ui/core/colors";
-import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
+import routes from './routes';
+
 const store = createStore(rootReducer);
 const theme = createMuiTheme({
-    palette:{
-        primary: blue,
-    }
-})
+  palette: {
+    primary: blue,
+  },
+  typography: {
+    useNextVariants: true,
+  },
+});
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <MuiThemeProvider theme={theme}>
-          <Provider store={store}>
-            <HashRouter>
-              {routes}
-            </HashRouter>
-          </Provider>
+          <Provider store={store}>{routes}</Provider>
         </MuiThemeProvider>
       </div>
     );

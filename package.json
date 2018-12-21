@@ -1,32 +1,45 @@
 {
-  "name": "pwa-starter-npm",
+  "name": "pwa-starter-app",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "ciTest": "CI=true react-scripts test --env=jsdom"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "dependencies": {
-    "@material-ui/core": "^3.6.2",
-    "@material-ui/lab": "^3.0.0-alpha.25",
+    "@material-ui/core": "^3.7.0",
+    "@material-ui/lab": "^3.0.0-alpha.26",
+    "@types/jest": "^23.3.10",
+    "@types/material-ui": "^0.21.5",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.17",
+    "@types/react-dom": "^16.0.11",
     "@types/react-redux": "^6.0.11",
     "@types/react-router-dom": "^4.3.1",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-redux": "^5.1.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts-ts": "3.1.0",
+    "react-scripts": "^2.1.1",
     "redux": "^4.0.1",
     "typeface-roboto": "0.0.54"
   },
-  "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "ciTest": "CI=true react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
-  },
   "devDependencies": {
-    "@types/jest": "^23.3.7",
-    "@types/node": "^10.12.0",
-    "@types/react": "^16.4.18",
-    "@types/react-dom": "^16.0.9",
-    "typescript": "^3.1.3"
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2"
   }
 }
