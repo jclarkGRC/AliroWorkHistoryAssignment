@@ -1,11 +1,11 @@
-import * as React from "react";
+import React from 'react';
 
 const Home = () => {
-	return (
-		<div>
-			<p> Welcome to the DHA PWA Starter application</p>
-		</div>
-	)
+  return (
+    <div>
+      <p>Welcome to the DHA PWA Starter application</p>
+    </div>
+  );
 };
 
 export default Home;
