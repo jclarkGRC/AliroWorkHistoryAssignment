@@ -1,0 +1,22 @@
+image: node:latest
+
+pipelines:
+  default:
+    - step:
+        name: "Install dependencies"
+        caches:
+          - node
+        script:
+          - npm install
+    - step:
+        name: "Build"
+        caches:
+          - node
+        script:
+           - npm run build
+    - step:
+        name: "Test"
+        caches:
+          - node
+        script:
+          - npm test
