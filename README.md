@@ -7,56 +7,40 @@ You can find more information about getting started with Create React App [here]
 and available scripts [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Table of Contents
+
 - [Quick Start](#markdown-header-quick-start)
+- [WMT SDK Modules](#markdown-header-wmt-sdk-modules)
 - [Built With](#markdown-header-built-with)
-- [File Structure](#markdown-header-file-structure)
-- [Available Scripts](#markdown-header-available-scripts)
-      - [npm start](#markdown-header-npm-start)
-      - [npm test](#markdown-header-npm-test)
-      - [npm run build](#markdown-header-npm-run-build)
-      - [npm run eject](#markdown-header-npm-run-eject)
+- [Available Scripts](#markdown-header-available-scripts) - [npm start](#markdown-header-npm-start) - [npm test](#markdown-header-npm-test) - [npm run build](#markdown-header-npm-run-build) - [npm run eject](#markdown-header-npm-run-eject)
 - [Testing](#markdown-header-testing)
 - [License](#markdown-header-license)
 
 ## Quick Start
+
 1. git clone git@bitbucket.org:wmtp/pwa-starter-application-npm-ts.git
 1. cd into simple-mood-tracker-pwa
-1. Run  'npm install'
+1. Run 'npm install'
 1. Run 'npm start'
 
+## WMT SDK Modules
+
+The application uses the following WMT SDK modules:
+
 ## Built With
+
 - [React](https://facebook.github.io/create-react-app/)
 - [Material UI](https://material-ui.com/)
 - [Typescript](https://www.typescriptlang.org/)
 
-
-## File Structure
-
-After creation, your project should look like this:
-
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
-```
 ## Available Scripts
+
+More information on available scripts from the Create React App [documentation](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.<br>
+Runs the app in development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
@@ -88,15 +72,17 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Testing
+
 - Tests can be ran with the `npm test` command
-- Tests are ran using Jest with enzyme
-        - More information about getting started with jest can be found [here](https://jestjs.io/docs/en/getting-started.html)
+- Tests are ran using Jest with enzyme - More information about getting started with jest can be found [here](https://jestjs.io/docs/en/getting-started.html)
 - Example Render Test
-``` javascript 
+
+```javascript
 it('renders without crashing', () => {
     shallow(<Home/>);
-});`    
+});`
 ```
 
 ## License
+
 This project is licensed under the MIT License.
