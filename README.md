@@ -1,6 +1,6 @@
 ## PWA Starter Application
 
-This application is a basic react starter application used by WMT developers for developing progressive web applications
+This application is a basic react starter application used by DHA developers for developing progressive web applications
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 You can find more information about getting started with Create React App [here](https://facebook.github.io/create-react-app/docs/getting-started),
@@ -9,7 +9,7 @@ and available scripts [here](https://github.com/facebookincubator/create-react-a
 ## Table of Contents
 
 - [Quick Start](#markdown-header-quick-start)
-- [WMT SDK Modules](#markdown-header-wmt-sdk-modules)
+- [DHA SDK Modules](#markdown-header-dha-sdk-modules)
 - [Built With](#markdown-header-built-with)
 - [Available Scripts](#markdown-header-available-scripts) - [npm start](#markdown-header-npm-start) - [npm test](#markdown-header-npm-test) - [npm run build](#markdown-header-npm-run-build) - [npm run eject](#markdown-header-npm-run-eject)
 - [Testing](#markdown-header-testing)
@@ -22,9 +22,9 @@ and available scripts [here](https://github.com/facebookincubator/create-react-a
 1. Run 'npm install'
 1. Run 'npm start'
 
-## WMT SDK Modules
+## DHA SDK Modules
 
-The application uses the following WMT SDK modules:
+The application uses the following DHA SDK modules:
 
 ## Built With
 
