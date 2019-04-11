@@ -7,7 +7,8 @@
 * pwa-starter-application-npm-ts
 *
 * Copyright © 2009-2019 United States Government as represented by
-* the Chief Information Officer of the DHA Connected Health. All Rights Reserved.
+* the  Program Manager of the DHA: Web and Mobile Technology Program Management Office
+* All Rights Reserved.
 *
 * Copyright © 2009-2019 Contributors. All Rights Reserved.
 *
@@ -22,13 +23,12 @@
 * HEREIN, OR ANY PART THEREOF, IS, BY THAT ACTION, ACCEPTING IN FULL THE
 * RESPONSIBILITIES AND OBLIGATIONS CONTAINED IN THIS AGREEMENT.
 *
-* Government Agency: DHA Connected Health
-* Government Agency Original Software Designation: pwa-starter-application-npm-ts
-* Government Agency Original Software Title: pwa-starter-application-npm-ts
+* Government Agency: DHA: Web and Mobile Technology Program Management Office
+* Government Agency Original Software Designation:
+* Government Agency Original Software Title:
 * User Registration Requested. Please send email
 * with your contact information to: robert.a.kayl.civ@mail.mil
-* Government Agency Point of Contact for Original Software: robert.a.kayl.civ@mail.mil
-*
+* Government Agency Point of Contact for Original Software - Program Manager: robert.a.kayl.civ@mail.mil
 */
 
 // This file lists all of the action names
