@@ -35,14 +35,16 @@ import Slider from 'dha-slider'
 
 class Home extends React.Component<any, any> {
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             sliderValue: 50
-        }
+        };
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event, value) {
-        this.setState({sliderValue: value})
+        // this.setState({sliderValue: value})
+        this.setState({sliderValue: value});
     }
 
     render(){
