@@ -31,13 +31,31 @@
 * Government Agency Point of Contact for Original Software - Program Manager: robert.a.kayl.civ@mail.mil
 */
 import React from 'react';
+import Slider from 'dha-slider'
 
-const Home = () => {
-  return (
-    <div>
-      <p>Welcome to the DHA PWA Starter application</p>
-    </div>
-  );
-};
+class Home extends React.Component<any, any> {
+    constructor(props){
+        super(props)
+        this.state = {
+            sliderValue: 50
+        }
+    }
+
+    handleChange(event, value) {
+        this.setState({sliderValue: value})
+    }
+
+    render(){
+        return(
+            <Slider
+                lowerTag={'Relaxed'}
+                upperTag={'Anxious'}
+                title="Anxiety"
+                value={this.state.sliderValue}
+                handleChange={this.handleChange}
+            />
+        )
+    }
+}
 
 export default Home;
