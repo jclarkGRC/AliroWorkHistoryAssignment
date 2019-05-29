@@ -7,8 +7,7 @@
 * pwa-starter-application-npm-ts
 *
 * Copyright © 2009-2019 United States Government as represented by
-* the  Program Manager of the DHA: Web and Mobile Technology Program Management Office
-* All Rights Reserved.
+* the Chief Information Officer of the DHA Connected Health. All Rights Reserved.
 *
 * Copyright © 2009-2019 Contributors. All Rights Reserved.
 *
@@ -23,41 +22,22 @@
 * HEREIN, OR ANY PART THEREOF, IS, BY THAT ACTION, ACCEPTING IN FULL THE
 * RESPONSIBILITIES AND OBLIGATIONS CONTAINED IN THIS AGREEMENT.
 *
-* Government Agency: DHA: Web and Mobile Technology Program Management Office
-* Government Agency Original Software Designation:
-* Government Agency Original Software Title:
+* Government Agency: DHA Connected Health
+* Government Agency Original Software Designation: pwa-starter-application-npm-ts
+* Government Agency Original Software Title: pwa-starter-application-npm-ts
 * User Registration Requested. Please send email
 * with your contact information to: robert.a.kayl.civ@mail.mil
-* Government Agency Point of Contact for Original Software - Program Manager: robert.a.kayl.civ@mail.mil
+* Government Agency Point of Contact for Original Software: robert.a.kayl.civ@mail.mil
+*
 */
 import React from 'react';
-import Slider from 'dha-slider'
 
-class Home extends React.Component<any, any> {
-    constructor(props){
-        super(props);
-        this.state = {
-            sliderValue: 50
-        };
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event, value) {
-        // this.setState({sliderValue: value})
-        this.setState({sliderValue: value});
-    }
-
-    render(){
-        return(
-            <Slider
-                lowerTag={'Relaxed'}
-                upperTag={'Anxious'}
-                title="Anxiety"
-                value={this.state.sliderValue}
-                handleChange={this.handleChange}
-            />
-        )
-    }
-}
+const Home = () => {
+    return (
+        <div>
+            <p>Welcome to the DHA PWA Starter application</p>
+        </div>
+    );
+};
 
 export default Home;
