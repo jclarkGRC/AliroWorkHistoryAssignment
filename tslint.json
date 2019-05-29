@@ -6,7 +6,8 @@
     "member-access": false,
     "object-literal-sort-keys": false, // Enable if wanted
     "ordered-imports": false, // Disable for typescript
-    "quotemark": [true, "single", "jsx-double"]
+    "quotemark": [true, "single", "jsx-double"],
+    "no-console": false
   },
   "linterOptions": {
     "exclude": ["node_modules/**/*.ts"]
