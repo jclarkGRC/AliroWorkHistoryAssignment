@@ -3,6 +3,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
+import TextField from "@material-ui/core/TextField/TextField";
+import Select from "@material-ui/core/Select/Select";
+import Input from "@material-ui/core/Input/Input";
+import MenuItem from '@material-ui/core/MenuItem';
 
 const tabStyles = {
   borderLeft: "1px solid black",
@@ -16,6 +20,8 @@ interface TabContainerProps {
   children?: React.ReactNode;
 }
 
+
+
 function TabContainer(props: TabContainerProps) {
   return (
     <Typography component="div">
@@ -26,27 +32,58 @@ function TabContainer(props: TabContainerProps) {
 
 function JobForm() {
   return (
-    <div style={{border: "1px solid black", height: "300px", position: "relative"}}>
+    <div style={{border: "1px solid black", height: "400spx", position: "relative"}}>
       <form>
           <div style={{float: "left", padding: "40px", width: "45%"}}>
             <label>
-            Job title *
-            <input type="text" name="name" />
+            Job Title *
+            <TextField
+              id="standard-full-width"
+              placeholder="Please enter your job title"
+              fullWidth
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
             </label>
             <label>
             Industry *
-            <input type="text" name="name" />
+              <br/>
+              <Select
+                input={<Input name="age" id="age-helper" />}
+                fullWidth
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
             </label>
             <label>
             Responsibilities
-            <input type="text" name="name" />
+            <TextField
+              id="standard-multiline-static"
+              multiline
+              rows="4"
+              placeholder="(Optional) Add any responsibilites, skills, accomplishments"
+              fullWidth
+            />
             </label>
           </div>
 
           <div style={{float: "left", padding: "40px", width: "45%"}}>
             <label>
               Company *
-              <input type="text" name="name" />
+              <TextField
+              id="standard-full-width"
+              placeholder="Please enter your company title"
+              fullWidth
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
             </label>
             <label>
               Job Function *
