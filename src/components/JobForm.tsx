@@ -11,6 +11,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 interface State {
   jobTitle: string;
+  industry: string;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const jobTitles = [
   {
     value: 'None',
-    label: 'None',
+    label: 'Please select a job function',
   },
   {
     value: 'SE',
@@ -52,10 +53,30 @@ const jobTitles = [
   },
 ];
 
+const industries = [
+  {
+    value: 'None',
+    label: 'Please select an industry',
+  },
+  {
+    value: 'SD',
+    label: 'Software Development',
+  },
+  {
+    value: 'PM',
+    label: 'Project Management',
+  },
+  {
+    value: 'A',
+    label: 'Architecture',
+  },
+];
+
 export default function JobForm() {
 
   const [values, setValues] = React.useState<State>({
-  jobTitle: 'None'
+  jobTitle: 'None',
+  industry: 'None'
   });
 
   const handleChange = (name: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,20 +98,22 @@ export default function JobForm() {
               }}
             />
             </label>
+
             <label>
             Industry *
-              <br/>
-              <Select
-                input={<Input name="age" id="age-helper" />}
+              <TextField
+                id="standard-select-currency-native"
+                select
+                value={values.industry}
+                onChange={handleChange('industry')}
                 fullWidth
               >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Software Development</MenuItem>
-                <MenuItem value={20}>Project Management</MenuItem>
-                <MenuItem value={30}>Architecture</MenuItem>
-              </Select>
+                {industries.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </TextField>
             </label>
             <label>
             Responsibilities
@@ -119,15 +142,12 @@ export default function JobForm() {
             
             <label>
             Job Function *
-              <br/>
               <TextField
                 id="standard-select-currency-native"
                 select
-                label="Native select"
                 value={values.jobTitle}
                 onChange={handleChange('jobTitle')}
-                helperText="Please select your currency"
-                margin="normal"
+                fullWidth
               >
                 {jobTitles.map(option => (
                   <option key={option.value} value={option.value}>
