@@ -7,7 +7,11 @@ const Home = () => {
             <hr/>
           <h1 style={{paddingLeft: "50px"}}>Work History</h1>
           <br/>
-          <WorkHistoryInputForm/>
+          <div style={
+            {paddingLeft: "50px",
+             paddingRight: "50px"
+            }
+          }><WorkHistoryInputForm/></div>
         </div>
     );
 };
