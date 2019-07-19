@@ -34,8 +34,9 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div>
-            <p>Welcome to the DHA PWA Starter application</p>
+        <div style={{paddingTop: "50px"}}>
+            <hr/>
+          <h1 style={{paddingLeft: "50px"}}>Work History</h1>
         </div>
     );
 };
