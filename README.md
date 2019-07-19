@@ -1,6 +1,6 @@
-## PWA Starter Application
+## Aliro Work History Assignment
 
-This application is a basic react starter application used by DHA developers for developing progressive web applications
+This application displays employee work history and allows the users to add more work history as needed.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 You can find more information about getting started with Create React App [here](https://facebook.github.io/create-react-app/docs/getting-started),
@@ -21,10 +21,6 @@ and available scripts [here](https://github.com/facebookincubator/create-react-a
 1. cd into simple-mood-tracker-pwa
 1. Run 'npm install'
 1. Run 'npm start'
-
-## DHA SDK Modules
-
-The application uses the following DHA SDK modules:
 
 ## Built With
 
