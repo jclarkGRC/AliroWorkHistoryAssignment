@@ -7,8 +7,61 @@ import TextField from "@material-ui/core/TextField/TextField";
 import Select from "@material-ui/core/Select/Select";
 import Input from "@material-ui/core/Input/Input";
 import MenuItem from '@material-ui/core/MenuItem';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+
+interface State {
+  jobTitle: string;
+}
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 200,
+    },
+    dense: {
+      marginTop: 19,
+    },
+    menu: {
+      width: 200,
+    },
+  }),
+);
+
+const jobTitles = [
+  {
+    value: 'None',
+    label: 'None',
+  },
+  {
+    value: 'SE',
+    label: 'Software Engineer',
+  },
+  {
+    value: 'PM',
+    label: 'Project Manager',
+  },
+  {
+    value: 'GA',
+    label: 'Graphic Artist',
+  },
+];
 
 export default function JobForm() {
+
+  const [values, setValues] = React.useState<State>({
+  jobTitle: 'None'
+  });
+
+  const handleChange = (name: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [name]: event.target.value });
+  };
+
   return (
     <div style={{border: "1px solid black", height: "400px", position: "relative"}}>
       <form>
@@ -63,11 +116,26 @@ export default function JobForm() {
               }}
             />
             </label>
+            
             <label>
-              Job Function *
-              <input type="text" name="name" />
-            </label>
-
+            Job Function *
+              <br/>
+              <TextField
+                id="standard-select-currency-native"
+                select
+                label="Native select"
+                value={values.jobTitle}
+                onChange={handleChange('jobTitle')}
+                helperText="Please select your currency"
+                margin="normal"
+              >
+                {jobTitles.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </TextField>
+            </label>  
             <div>
               <label style={{float: "left"}}>
               Start Date *
