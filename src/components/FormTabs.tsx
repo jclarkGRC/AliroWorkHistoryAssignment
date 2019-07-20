@@ -29,6 +29,7 @@ function TabContainer(props: TabContainerProps) {
 }
 
 class FormTabs extends React.Component<any,any> {
+  private currentJobs: string[] = [];
 
   constructor(props){
     super(props);
@@ -47,10 +48,9 @@ class FormTabs extends React.Component<any,any> {
   }
 
   addNewJob(){
-    let testJob = "Test Job";
-    let testJobs = [];
-    testJobs.push(testJob);
-    this.setState({jobs: testJobs});
+    let testJob = "Example Job"
+    this.currentJobs.push(testJob);
+    this.setState({jobs: this.currentJobs});
   }
 
   render() {
