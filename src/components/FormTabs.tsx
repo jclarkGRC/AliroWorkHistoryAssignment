@@ -17,6 +17,7 @@ const tabStyles = {
 };
 
 let jobSaved = false;
+let lessThan5Jobs = true;
 
 interface TabContainerProps {
   children?: React.ReactNode;
@@ -52,8 +53,7 @@ class FormTabs extends React.Component<any,any> {
   addNewJob(){
     let testJob = "Example Job";
     let incrementValue;
-    if (this.state.value >= 1) {
-      alert("we get here")
+    if (this.state.value >= 1 && lessThan5Jobs) {
       incrementValue = this.state.value + 1;
       this.currentJobs.push(testJob);
       this.setState({jobs: this.currentJobs, value: incrementValue});
@@ -66,6 +66,10 @@ class FormTabs extends React.Component<any,any> {
       this.currentJobs.push(testJob);
       this.setState({jobs: this.currentJobs, value: 0});
       jobSaved = true;
+    }
+    if(this.state.value > 2) {
+      alert("You may not add anymore jobs at this time");
+      lessThan5Jobs = false;
     }
   }
 
