@@ -29,7 +29,7 @@ function TabContainer(props: TabContainerProps) {
 }
 
 export default function FormTabs() {
-  let jobs = [];
+  let jobs = ['Software Engineer', 'Program Manager', 'Scrum Master'];
   const [value, setValue] = React.useState(0);
 
   function handleChange(event: React.ChangeEvent<{}>, newValue: number) {
