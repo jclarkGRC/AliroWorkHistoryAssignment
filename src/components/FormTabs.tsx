@@ -28,60 +28,65 @@ function TabContainer(props: TabContainerProps) {
   );
 }
 
-export default function FormTabs() {
-  let jobs = ['Software Engineer', 'Program Manager', 'Scrum Master'];
-  const [value, setValue] = React.useState(0);
+class FormTabs extends React.Component<any,any> {
 
-  function handleChange(event: React.ChangeEvent<{}>, newValue: number) {
-    setValue(newValue);
+  state = {
+    jobs: [],
+    value: 0
+  };
+
+  handleChange(index){
+    this.setState({value: index})
   }
 
-  function addNewJob () {
-    jobs.push("Job name");
+  addNewJob(){
+    alert("you clicked me");
   }
 
-  if(jobs.length === 0){
-    return (
-      <div>
-        <Tabs value={value} onChange={handleChange}>
-          <Tab style={tabStyles} label="Add Position" />
-          <Fab
-            variant="extended"
-            size="small"
-            color="primary"
-            aria-label="Add"
-            style={{marginLeft: "10px", marginTop: "6px"}}
-            onClick={addNewJob}
-          >+
-          </Fab>
-        </Tabs>
-        {value === 0 && <TabContainer><JobForm/></TabContainer>}
-      </div>
-    );
-  }
-  else {
-    let tabs = jobs.map((item) =>
-      <Tab style={tabStyles} label={item} />
-    );
-    return (
-      <div>
-        <Tabs value={value} onChange={handleChange}>
-          {tabs}
-          <Fab
-            variant="extended"
-            size="small"
-            color="primary"
-            aria-label="Add"
-            style={{marginLeft: "10px", marginTop: "6px"}}
-            onClick={addNewJob}
-          >+
-          </Fab>
-        </Tabs>
-        <TabContainer><JobForm/></TabContainer>
-      </div>
-    )
+  render() {
+
+    if (this.state.jobs.length === 0) {
+      return (
+        <div>
+          <Tabs value={this.state.value} onChange={this.handleChange}>
+            <Tab style={tabStyles} label="Add Position"/>
+            <Fab
+              variant="extended"
+              size="small"
+              color="primary"
+              aria-label="Add"
+              style={{marginLeft: "10px", marginTop: "6px"}}
+              onClick={this.addNewJob}
+            >+
+            </Fab>
+          </Tabs>
+          {this.state.value === 0 && <TabContainer><JobForm/></TabContainer>}
+        </div>
+      );
+    }
+    else {
+      let tabs = this.state.jobs.map((item) =>
+        <Tab style={tabStyles} label={item}/>
+      );
+      return (
+        <div>
+          <Tabs value={this.state.value} onChange={this.handleChange}>
+            {tabs}
+            <Fab
+              variant="extended"
+              size="small"
+              color="primary"
+              aria-label="Add"
+              style={{marginLeft: "10px", marginTop: "6px"}}
+              onClick={this.addNewJob}
+            >+
+            </Fab>
+          </Tabs>
+          <TabContainer><JobForm/></TabContainer>
+        </div>
+      )
+    }
   }
 }
-
-
+export default FormTabs;
 
