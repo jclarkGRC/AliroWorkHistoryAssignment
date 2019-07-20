@@ -1,3 +1,6 @@
+// Created by Joshua Clark for Aliro evaluation
+// 7/19/19
+
 import React from 'react';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -39,8 +42,7 @@ export default function FormTabs() {
   return (
     <div>
         <Tabs value={value} onChange={handleChange}>
-          <Tab style={tabStyles} label="Web Developer" />
-          <Tab style={tabStyles} label="Backend Engineer" />
+          <Tab style={tabStyles} label="Add Position" />
           <Fab
             variant="extended"
             size="small"
@@ -51,7 +53,6 @@ export default function FormTabs() {
           </Fab>
         </Tabs>
       {value === 0 && <TabContainer><JobForm/></TabContainer>}
-      {value === 1 && <TabContainer><JobForm/></TabContainer>}
     </div>
   );
 }

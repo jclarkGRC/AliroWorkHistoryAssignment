@@ -46,3 +46,7 @@ code {
 input, label {
   display: block
 }
+
+.marginTop {
+	margin-top: 20px;
+}

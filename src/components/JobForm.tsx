@@ -1,3 +1,6 @@
+// Created by Joshua Clark for Aliro evaluation
+// 7/19/19
+
 import React from 'react';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -8,6 +11,10 @@ import Select from "@material-ui/core/Select/Select";
 import Input from "@material-ui/core/Input/Input";
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import DatePicker from './DatePicker';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Button from '@material-ui/core/Button';
 
 interface State {
   jobTitle: string;
@@ -99,7 +106,7 @@ export default function JobForm() {
             />
             </label>
 
-            <label>
+            <label style={{marginTop: '30px'}}>
             Industry *
               <TextField
                 id="standard-select-currency-native"
@@ -115,7 +122,7 @@ export default function JobForm() {
                 ))}
               </TextField>
             </label>
-            <label>
+            <label style={{marginTop: '30px'}}>
             Responsibilities
             <TextField
               id="standard-multiline-static"
@@ -140,7 +147,7 @@ export default function JobForm() {
             />
             </label>
             
-            <label>
+            <label style={{marginTop: '30px'}}>
             Job Function *
               <TextField
                 id="standard-select-currency-native"
@@ -157,23 +164,26 @@ export default function JobForm() {
               </TextField>
             </label>  
             <div>
-              <label style={{float: "left"}}>
+              <label style={{float: "left", marginTop: '30px'}}>
               Start Date *
-              <input type="text" name="name" />
+              <DatePicker/>
               </label>
-              <label style={{float: "left"}}>
+              <label style={{float: "left", marginTop: '30px'}}>
                 End Date:
-                <input type="text" name="name" />
+                <DatePicker/>
               </label>
-              <label style={{float: "left"}}>
-                CurrentPosition:
-                <input type="text" name="name" />
-              </label>
+              <FormControlLabel
+                style={{marginTop: '30px'}}
+                value="end"
+                control={<Checkbox color="primary" />}
+                label="Current Position"
+                labelPlacement="end"
+              />
             </div>
-
           </div>
-
-        <input style={{position: "absolute", top: "90%", left: "95%"}} type="submit" value="Save" />
+        <Button style={{position: "absolute", top: "80%", left: "92%"}} variant="outlined" size="large" color="primary">
+          Save
+        </Button>
       </form>
     </div>
   )
