@@ -29,14 +29,20 @@ function TabContainer(props: TabContainerProps) {
 }
 
 export default function FormTabs() {
+  let jobs = [];
   const [value, setValue] = React.useState(0);
 
   function handleChange(event: React.ChangeEvent<{}>, newValue: number) {
     setValue(newValue);
   }
 
-  return (
-    <div>
+  function addNewJob () {
+    jobs.push("Job name");
+  }
+
+  if(jobs.length === 0){
+    return (
+      <div>
         <Tabs value={value} onChange={handleChange}>
           <Tab style={tabStyles} label="Add Position" />
           <Fab
@@ -45,12 +51,36 @@ export default function FormTabs() {
             color="primary"
             aria-label="Add"
             style={{marginLeft: "10px", marginTop: "6px"}}
+            onClick={addNewJob}
           >+
           </Fab>
         </Tabs>
-      {value === 0 && <TabContainer><JobForm/></TabContainer>}
-    </div>
-  );
+        {value === 0 && <TabContainer><JobForm/></TabContainer>}
+      </div>
+    );
+  }
+  else {
+    let tabs = jobs.map((item) =>
+      <Tab style={tabStyles} label={item} />
+    );
+    return (
+      <div>
+        <Tabs value={value} onChange={handleChange}>
+          {tabs}
+          <Fab
+            variant="extended"
+            size="small"
+            color="primary"
+            aria-label="Add"
+            style={{marginLeft: "10px", marginTop: "6px"}}
+            onClick={addNewJob}
+          >+
+          </Fab>
+        </Tabs>
+        <TabContainer><JobForm/></TabContainer>
+      </div>
+    )
+  }
 }
 
 

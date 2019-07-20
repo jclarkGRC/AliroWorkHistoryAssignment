@@ -71,7 +71,7 @@ export default function JobForm() {
             <TextField
               id="standard-full-width"
               placeholder="Please enter your job title"
-              fullWidth
+              fullWidth={true}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -85,7 +85,7 @@ export default function JobForm() {
                 select
                 value={values.industry}
                 onChange={handleChange('industry')}
-                fullWidth
+                fullWidth={true}
               >
                 {industries.map(option => (
                   <option key={option.value} value={option.value}>
@@ -101,7 +101,7 @@ export default function JobForm() {
               multiline
               rows="4"
               placeholder="(Optional) Add any responsibilites, skills, accomplishments"
-              fullWidth
+              fullWidth={true}
             />
             </label>
           </div>
@@ -112,7 +112,7 @@ export default function JobForm() {
               <TextField
               id="standard-full-width"
               placeholder="Please enter your company title"
-              fullWidth
+              fullWidth={true}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -126,7 +126,7 @@ export default function JobForm() {
                 select
                 value={values.jobTitle}
                 onChange={handleChange('jobTitle')}
-                fullWidth
+                fullWidth={true}
               >
                 {jobTitles.map(option => (
                   <option key={option.value} value={option.value}>
@@ -135,17 +135,19 @@ export default function JobForm() {
                 ))}
               </TextField>
             </label>  
-            <div>
+            <div style={{display: "block"}}>
               <label style={{float: "left", marginTop: '30px'}}>
               Start Date *
+              <br/>
               <DatePicker/>
               </label>
-              <label style={{float: "left", marginTop: '30px'}}>
+              <label style={{float: "left", marginTop: '30px', marginLeft: '10px'}}>
                 End Date:
+                <br/>
                 <DatePicker/>
               </label>
               <FormControlLabel
-                style={{marginTop: '30px'}}
+                style={{marginTop: '30px', marginLeft: '10px'}}
                 value="end"
                 control={<Checkbox color="primary" />}
                 label="Current Position"
