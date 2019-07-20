@@ -2,15 +2,7 @@
 // 7/19/19
 
 import React from 'react';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Fab from '@material-ui/core/Fab';
 import TextField from "@material-ui/core/TextField/TextField";
-import Select from "@material-ui/core/Select/Select";
-import Input from "@material-ui/core/Input/Input";
-import MenuItem from '@material-ui/core/MenuItem';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import DatePicker from './DatePicker';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -20,26 +12,6 @@ interface State {
   jobTitle: string;
   industry: string;
 }
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    container: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    textField: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
-      width: 200,
-    },
-    dense: {
-      marginTop: 19,
-    },
-    menu: {
-      width: 200,
-    },
-  }),
-);
 
 const jobTitles = [
   {

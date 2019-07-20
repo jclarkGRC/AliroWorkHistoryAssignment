@@ -6,10 +6,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
-import TextField from "@material-ui/core/TextField/TextField";
-import Select from "@material-ui/core/Select/Select";
-import Input from "@material-ui/core/Input/Input";
-import MenuItem from '@material-ui/core/MenuItem';
 import JobForm from './JobForm';
 
 const tabStyles = {
@@ -56,3 +52,6 @@ export default function FormTabs() {
     </div>
   );
 }
+
+
+
