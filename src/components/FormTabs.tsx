@@ -30,17 +30,27 @@ function TabContainer(props: TabContainerProps) {
 
 class FormTabs extends React.Component<any,any> {
 
-  state = {
-    jobs: [],
-    value: 0
-  };
+  constructor(props){
+    super(props);
+
+    this.state = {
+      jobs: [],
+      value: 0
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.addNewJob = this.addNewJob.bind(this);
+  }
 
   handleChange(index){
     this.setState({value: index})
   }
 
   addNewJob(){
-    alert("you clicked me");
+    let testJob = "Test Job";
+    let testJobs = [];
+    testJobs.push(testJob);
+    this.setState({jobs: testJobs});
   }
 
   render() {
