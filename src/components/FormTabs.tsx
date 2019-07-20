@@ -16,6 +16,8 @@ const tabStyles = {
   borderTopRightRadius: "20px"
 };
 
+let jobSaved = false;
+
 interface TabContainerProps {
   children?: React.ReactNode;
 }
@@ -48,9 +50,23 @@ class FormTabs extends React.Component<any,any> {
   }
 
   addNewJob(){
-    let testJob = "Example Job"
-    this.currentJobs.push(testJob);
-    this.setState({jobs: this.currentJobs});
+    let testJob = "Example Job";
+    let incrementValue;
+    if (this.state.value >= 1) {
+      alert("we get here")
+      incrementValue = this.state.value + 1;
+      this.currentJobs.push(testJob);
+      this.setState({jobs: this.currentJobs, value: incrementValue});
+    }
+    if(jobSaved && this.state.value < 1) {
+      this.currentJobs.push(testJob);
+      this.setState({jobs: this.currentJobs, value: 1})
+    }
+    if(!jobSaved) {
+      this.currentJobs.push(testJob);
+      this.setState({jobs: this.currentJobs, value: 0});
+      jobSaved = true;
+    }
   }
 
   render() {
