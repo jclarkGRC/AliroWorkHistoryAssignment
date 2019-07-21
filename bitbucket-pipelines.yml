@@ -1,5 +1,5 @@
 # bitbucket-pipelines.yml
-# Bitbucket pipelines build script for simple-b2r-pwa
+# Bitbucket pipelines docs script for simple-b2r-pwa
 #
 # Created by Joshua Clark on 4/10/19.
 #
@@ -42,7 +42,7 @@ pipelines:
         caches:
           - node
         script:
-           - npm run build
+           - npm run docs
     - step:
         name: "Test"
         caches:
